@@ -1,0 +1,16 @@
+$fave-color: red;
+$fave-font: 'Open Sans', 'Arial', sans-serif;
+
+body {
+	font-family: $fave-font;
+	color: $fave-color;
+	background-image: url('../images/sword.jpg');
+	background-repeat: no-repeat;
+	
+
+}
+
+button { 
+	color: white;
+}
+
