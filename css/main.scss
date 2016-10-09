@@ -32,15 +32,22 @@ div {
 	height: 50%;
 	width: 50%;
 	display: inline-block;
+
 }
 
-
 .card{
-	height: 75px;
-	width: 75px;
+	height: 100px;
+	width: 100px;
 	border-style: dotted;
 	border-width: 1px;
 	border-color: white;
 	border-radius: 75px;
 	background: transparent;
+	transform: rotateY(0deg);
 }
+
+.card:hover {
+  border: 3px solid white;
+}
+
+
