@@ -1,10 +1,37 @@
 body {
-  font-family: "Open Sans", "Arial", sans-serif;
-  color: red;
+  font-family: "Press Start 2P", cursive;
   background-image: url("../images/sword.jpg");
-  background-repeat: no-repeat; }
+  cursor: pointer;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-attachment: fixed;
+  background-size: cover; }
 
 button {
-  color: white; }
+  color: white;
+  margin-top: 65%;
+  margin-left: 10%;
+  background-color: transparent;
+  border: none;
+  font-size: 2rem; }
+
+div {
+  color: #FFFF00;
+  float: left;
+  margin: 2%; }
+
+.board {
+  height: 50%;
+  width: 50%;
+  display: inline-block; }
+
+.card {
+  height: 75px;
+  width: 75px;
+  border-style: dotted;
+  border-width: 1px;
+  border-color: white;
+  border-radius: 75px;
+  background: transparent; }
 
 /*# sourceMappingURL=main.css.map */
