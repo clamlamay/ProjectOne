@@ -20,6 +20,9 @@ div {
   float: left;
   margin: 2%; }
 
+ul {
+  list-style: none; }
+
 .board {
   height: 50%;
   width: 50%;
@@ -28,12 +31,11 @@ div {
 .card {
   height: 100px;
   width: 100px;
+  border-radius: 75px;
   border-style: dotted;
   border-width: 1px;
   border-color: white;
-  border-radius: 75px;
-  background: transparent;
-  transform: rotateY(0deg); }
+  background: transparent; }
 
 .card:hover {
   border: 3px solid white; }
