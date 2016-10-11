@@ -13,7 +13,7 @@ body {
 
 button { 
 	color: white;
-	margin-top: 65%;
+	margin-top: 10%;
 	margin-left: 10%;
 	background-color: transparent;
 	border: none;
@@ -24,31 +24,36 @@ div {
 	color: #FFFF00;
 	float: left;
 	margin: 2%;
+
 }
 
 ul {
 	list-style: none;
 }
 
-.board{
+.board {
 	height: 50%;
 	width: 50%;
 	display: inline-block;
 
 }
 
-.card{
-	height: 100px;
-	width: 100px;
-	border-radius: 75px;
+.card {
+	height: 400px;
+	width: 300px;
+	// border-radius: 50px;
 	border-style: dotted;
 	border-width: 1px;
 	border-color: white;
 	background: transparent;
+	background-image: url('../images/logo.png');
+	
 }
 
 .card:hover {
   border: 3px solid white;
+  // transform: rotateX(180deg);
+
 }
 
 

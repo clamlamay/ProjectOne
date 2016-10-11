@@ -9,7 +9,7 @@ body {
 
 button {
   color: white;
-  margin-top: 65%;
+  margin-top: 10%;
   margin-left: 10%;
   background-color: transparent;
   border: none;
@@ -29,13 +29,13 @@ ul {
   display: inline-block; }
 
 .card {
-  height: 100px;
-  width: 100px;
-  border-radius: 75px;
+  height: 400px;
+  width: 300px;
   border-style: dotted;
   border-width: 1px;
   border-color: white;
-  background: transparent; }
+  background: transparent;
+  background-image: url("../images/logo.png"); }
 
 .card:hover {
   border: 3px solid white; }
