@@ -38,6 +38,7 @@ ul {
   background-image: url("../images/logo.png"); }
 
 .card:hover {
-  border: 3px solid white; }
+  border: 3px solid white;
+  transform: rotateX(180deg); }
 
 /*# sourceMappingURL=main.css.map */

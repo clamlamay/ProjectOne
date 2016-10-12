@@ -38,6 +38,7 @@ ul {
 
 }
 
+
 .card {
 	height: 400px;
 	width: 300px;
@@ -52,7 +53,7 @@ ul {
 
 .card:hover {
   border: 3px solid white;
-  // transform: rotateX(180deg);
+  transform: rotateX(180deg);
 
 }
 
