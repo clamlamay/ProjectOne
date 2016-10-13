@@ -1,15 +1,52 @@
 console.log('loaded window')
-// document.getElementById('FF7-theme').play();
+document.getElementById('FF7-theme').play();
+
+var characters = [
+		'Cloud', 
+		'Cloud', 
+		'Tifa', 
+		'Tifa', 
+		'Aeris', 
+		'Aeris',
+		'Barret',
+		'Barret',
+		'Vincent',
+		'Vincent',
+		// 'RedXIII',
+		// 'RedXIII',
+		'CaitSith',
+		'CaitSith',
+		'Cid',
+		'Cid',
+		'Yuffie',
+		'Cid',
+]; 
 
 
-// $('.card').click(function(){
-// 	console.log('Card was clicked');
-// });
 
-
-
-var count = 61;
+var cardsInPlay = [];
+var board = document.getElementById('game-board');
+var clicks = 0;
+var score = 0;
+var count = 31;
 var counter = setInterval(timer,1000);
+
+Array.prototype.shuffle = function() {
+    var input = this;
+     
+    for (var i = input.length-1; i >=0; i--) {
+     
+        var randomIndex = Math.floor(Math.random()*(i+1)); 
+        var itemAtIndex = input[randomIndex]; 
+         
+        input[randomIndex] = input[i]; 
+        input[i] = itemAtIndex;
+    }
+    return input;
+}
+
+var cards = characters.shuffle();
+
 
 function timer(){
 	
@@ -24,37 +61,6 @@ function timer(){
 	};
 
 timer();
-
-
-function score(){
-	var score = 0
-	$("#score").text("Score:" + score);
-	};
-
-score();
-
-
-var cards = [
-		'Cloud', 
-		'Cloud', 
-		'Tifa', 
-		'Tifa', 
-		'Aeris', 
-		'Aeris',
-		'Yuffie',
-		'Yuffie',
-		'Vincent',
-		'Vincent',
-		'Red XIII',
-		'Red XIII',
-		'Cait Sith',
-		'Cait Sith',
-		'Cid Highwind',
-		'Cid Highwind',
-]; 
-
-var cardsInPlay = [];
-var board = document.getElementById('game-board');
 
 
 function createBoard() {
@@ -72,10 +78,21 @@ function isTwoCards() {
   cardsInPlay.push(this.getAttribute('data-card'));
   console.log(this.getAttribute('data-card'));
   if (this.getAttribute('data-card') === 'Cloud') {
-    this.innerHTML = "<img src='../ProjectOne/images/Cloud.png'>"; 
-  } else {
-    this.innerHTML = "<img src='../ProjectOne/images/Tifa.png'>"; 
-  }
+    this.innerHTML = "<img src='../ProjectOne/images/Cloud.png'>"; }	
+  if (this.getAttribute('data-card') === 'Tifa') {
+    this.innerHTML = "<img src='../ProjectOne/images/Tifa.png'>"; }
+  if (this.getAttribute('data-card') === 'Aeris') {
+    this.innerHTML = "<img src='../ProjectOne/images/Aeris.png'>"; }
+  if (this.getAttribute('data-card') === 'Barret') {
+    this.innerHTML = "<img src='../ProjectOne/images/Barret.png'>"; }
+  if (this.getAttribute('data-card') === 'Vincent') {
+    this.innerHTML = "<img src='../ProjectOne/images/Vincent.png'>"; }
+  if (this.getAttribute('data-card') === 'Yuffie') {
+    this.innerHTML = "<img src='../ProjectOne/images/Yuffie.png'>"; }
+  if (this.getAttribute('data-card') === 'CaitSith') {
+    this.innerHTML = "<img src='../ProjectOne/images/CaitSith.png'>"; }
+  if (this.getAttribute('data-card') === 'Cid') {
+    this.innerHTML = "<img src='../ProjectOne/images/Cid.png'>"; }  
   if (cardsInPlay.length === 2) {
     isMatch(cardsInPlay);
     cardsInPlay = [];
@@ -84,7 +101,10 @@ function isTwoCards() {
 
 function isMatch(cards) {
   if (cards[0] === cards[1]) {
+    score = score + 5;
+    $("#score").text("Score: " + score);
     alert("You found a match!");
+    document.getElementById('FF7-victory').play();
   } else {
     alert("Sorry, try again.");
   }
@@ -93,37 +113,13 @@ function isMatch(cards) {
 createBoard();
 
 
+function onClick() {
+	var clicks = 0;
+	clicks += 1;
+	$("#clicks").text("Clicks: " + clicks);
+	}
+onClick();
 
 
 
 
-
-// var cardsInPlay = [];
-
-// var board = $("#game-board");
-
-// function createBoard() {
-
-// 	for (var i = 0; i<charactersCards.length; i++){
-// 	// random = Math.round(Math.random() * i);	
-	
-// 	var img = document.createElement("img");
-// 	var div = document.createElement("div")
-// 	console.log(charactersCards[i]);
-// 	img.src = '../ProjectOne/images/' + charactersCards[i] + '.png';
-// 	$("#game-board").append('<div class="card">','</div>');
-// 	$("#game-board").append(img);
-// 		}
-// 	}	
-
-// createBoard();
-
-// 	var selection = $('.card');
-// 	$('.card').click(function(){
-// 		console.log('Card was clicked');
-// 		if (charactersCards === charactersCards) {
-// 	    alert("You found a match!");
-// 	  } else {
-// 	    alert("Sorry, try again.");
-// 	  }
-// 	});

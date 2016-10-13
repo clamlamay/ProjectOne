@@ -42,8 +42,6 @@ img {
   background-image: url("../images/logo.png"); }
 
 .card:hover {
-  border: 3px solid green;
-  background: blue;
-  transform: rotateY(180deg); }
+  border: 3px solid green; }
 
 /*# sourceMappingURL=main.css.map */
