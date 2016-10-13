@@ -41,22 +41,24 @@ ul {
 img {
 	height: 300px;
 	width: 200px;
+	border-radius: 25px;
+	background-color: white;
+
 }
 
 .card {
 	height: 300px;
 	width: 200px;
-	// border-radius: 50px;
-	border-style: dotted;
-	border-width: 1px;
-	border-color: white;
+	border-radius: 25px;
+	border: 20px;
+	border-color: blue;
 	background: white;
 	background-image: url('../images/logo.png');
-}
+	background-repeat:no-repeat;}
 
 .card:hover {
-  border: 3px solid green;
-  
+  border: 3px solid blue;
+
 }
 
 

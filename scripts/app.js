@@ -19,15 +19,15 @@ var characters = [
 		'Cid',
 		'Cid',
 		'Yuffie',
-		'Cid',
+		'Yuffie',
 ]; 
-
-
 
 var cardsInPlay = [];
 var board = document.getElementById('game-board');
 var clicks = 0;
+	$("#clicks").text("Clicks: " + clicks);
 var score = 0;
+	$("#score").text("Score: " + score);
 var count = 31;
 var counter = setInterval(timer,1000);
 
@@ -74,7 +74,9 @@ function createBoard() {
   }
 }
 
+
 function isTwoCards() {
+	console.log(this, 'this is this ')
   cardsInPlay.push(this.getAttribute('data-card'));
   console.log(this.getAttribute('data-card'));
   if (this.getAttribute('data-card') === 'Cloud') {
@@ -103,23 +105,33 @@ function isMatch(cards) {
   if (cards[0] === cards[1]) {
     score = score + 5;
     $("#score").text("Score: " + score);
-    alert("You found a match!");
+    // alert("You found a match!");
     document.getElementById('FF7-victory').play();
   } else {
-    alert("Sorry, try again.");
+    // alert("Sorry, try again.");
   }
+  // check setTimeout
+  setTimeout(function(){
+  	coverCard()
+  },2000)
 }
 
 createBoard();
-
+function coverCard(){
+ var cards = $('.card')
+ for (var i=0; i< cards.length; i++) {
+   	$('.card').html("<img src='../ProjectOne/images/logo.png'>")
+    // board.appendChild(cardElement);
+  }
+}
 
 function onClick() {
-	var clicks = 0;
-	clicks += 1;
+$('.card').on("click", function(){
+	clicks = clicks + 1;
 	$("#clicks").text("Clicks: " + clicks);
-	}
-onClick();
+})
+}
+onClick();	
 
-
-
+  
 
