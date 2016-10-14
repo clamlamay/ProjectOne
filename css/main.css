@@ -24,19 +24,19 @@ ul {
   list-style: none; }
 
 .board {
-  height: 50%;
-  width: 50%;
+  height: 100%;
+  width: 100%;
   display: inline-block; }
 
 img {
-  height: 300px;
-  width: 200px;
+  height: 150px;
+  width: 100px;
   border-radius: 25px;
   background-color: white; }
 
 .card {
-  height: 300px;
-  width: 200px;
+  height: 150px;
+  width: 100px;
   border-radius: 25px;
   border: 20px;
   border-color: blue;
@@ -45,6 +45,31 @@ img {
   background-repeat: no-repeat; }
 
 .card:hover {
-  border: 3px solid blue; }
+  background: #04bfd8; }
+
+@media all and (min-width: 768px) {
+  .article {
+    -webkit-flex: 5 0px;
+    flex: 5 0px;
+    -webkit-order: 2;
+    order: 2; }
+
+  footer {
+    -webkit-order: 3;
+    order: 3; } }
+.flex-container {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-flow: row wrap;
+  flex-flow: row wrap;
+  text-align: center; }
+
+.flex-container > * {
+  padding: 15px;
+  -webkit-flex: 1 100%;
+  flex: 1 100%; }
+
+#reset {
+  color: white; }
 
 /*# sourceMappingURL=main.css.map */

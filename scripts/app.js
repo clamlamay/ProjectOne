@@ -1,5 +1,5 @@
 console.log('loaded window')
-document.getElementById('FF7-theme').play();
+// document.getElementById('FF7-theme').play();
 
 var characters = [
 		'Cloud', 
@@ -12,8 +12,8 @@ var characters = [
 		'Barret',
 		'Vincent',
 		'Vincent',
-		// 'RedXIII',
-		// 'RedXIII',
+		'RedXIII',
+		'RedXIII',
 		'CaitSith',
 		'CaitSith',
 		'Cid',
@@ -28,7 +28,7 @@ var clicks = 0;
 	$("#clicks").text("Clicks: " + clicks);
 var score = 0;
 	$("#score").text("Score: " + score);
-var count = 31;
+var count = 46;
 var counter = setInterval(timer,1000);
 
 Array.prototype.shuffle = function() {
@@ -67,7 +67,7 @@ function createBoard() {
   
   for (var i=0; i<cards.length; i++) {
     var cardElement = document.createElement('div');
-    cardElement.className = 'card';
+    cardElement.className = 'card',
     cardElement.setAttribute('data-card', cards[i]);
     cardElement.addEventListener('click', isTwoCards);
     board.appendChild(cardElement);
@@ -76,7 +76,6 @@ function createBoard() {
 
 
 function isTwoCards() {
-	console.log(this, 'this is this ')
   cardsInPlay.push(this.getAttribute('data-card'));
   console.log(this.getAttribute('data-card'));
   if (this.getAttribute('data-card') === 'Cloud') {
@@ -94,7 +93,9 @@ function isTwoCards() {
   if (this.getAttribute('data-card') === 'CaitSith') {
     this.innerHTML = "<img src='../ProjectOne/images/CaitSith.png'>"; }
   if (this.getAttribute('data-card') === 'Cid') {
-    this.innerHTML = "<img src='../ProjectOne/images/Cid.png'>"; }  
+    this.innerHTML = "<img src='../ProjectOne/images/Cid.png'>"; }
+  if (this.getAttribute('data-card') === 'RedXIII') {
+    this.innerHTML = "<img src='../ProjectOne/images/RedXIII.png'>"; }  
   if (cardsInPlay.length === 2) {
     isMatch(cardsInPlay);
     cardsInPlay = [];
@@ -105,23 +106,23 @@ function isMatch(cards) {
   if (cards[0] === cards[1]) {
     score = score + 5;
     $("#score").text("Score: " + score);
-    // alert("You found a match!");
+    alert("You found a match!");
     document.getElementById('FF7-victory').play();
   } else {
     // alert("Sorry, try again.");
   }
-  // check setTimeout
   setTimeout(function(){
   	coverCard()
   },2000)
+  clearTimeout(isMatch);
 }
 
 createBoard();
+
 function coverCard(){
  var cards = $('.card')
  for (var i=0; i< cards.length; i++) {
    	$('.card').html("<img src='../ProjectOne/images/logo.png'>")
-    // board.appendChild(cardElement);
   }
 }
 
@@ -133,5 +134,6 @@ $('.card').on("click", function(){
 }
 onClick();	
 
-  
 
+
+ 
