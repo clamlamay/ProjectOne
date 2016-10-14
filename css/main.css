@@ -42,7 +42,8 @@ img {
   border-color: blue;
   background: white;
   background-image: url("../images/logo.png");
-  background-repeat: no-repeat; }
+  background-repeat: no-repeat;
+  position: relative; }
 
 .card:hover {
   background: #04bfd8; }
