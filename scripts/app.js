@@ -1,5 +1,5 @@
 console.log('loaded window')
-document.getElementById('FF7-theme').play();
+// document.getElementById('FF7-theme').play();
 
 var characters = [
 		'Cloud', 
@@ -25,7 +25,7 @@ var characters = [
 var cardsInPlay = [];
 var board = document.getElementById('game-board');
 var clicks = 0;
-	$("#clicks").text("Clicks: " + clicks);
+	// $("#clicks").text("Clicks: " + clicks);
 var score = 0;
 	$("#score").text("Score: " + score);
 var count = 46;
@@ -44,7 +44,6 @@ Array.prototype.shuffle = function() {
     }
     return input;
 }
-
 var cards = characters.shuffle();
 
 
@@ -111,20 +110,20 @@ function isMatch(cards) {
   } else {
     // alert("Sorry, try again.");
   }
-  setTimeout(function(){
-  	coverCard()
-  },2000)
-  clearTimeout(isMatch);
+  // setTimeout(function(){
+  // 	coverCard()
+  // },2000)
+  // clearTimeout(isMatch);
 }
 
 createBoard();
 
-function coverCard(){
- var cards = $('.card')
- for (var i=0; i< cards.length; i++) {
-   	$('.card').html("<img src='../ProjectOne/images/logo.png'>")
-  }
-}
+// function coverCard(){
+//  var cards = $('.card')
+//  for (var i=0; i< cards.length; i++) {
+//    	$('.card').html("<img src='../ProjectOne/images/logo.png'>")
+//   }
+// }
 
 function onClick() {
 $('.card').on("click", function(){
